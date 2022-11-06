@@ -17,10 +17,13 @@ module Calculate =
     let ``c5 cj c10 cq ck`` () = Test "c5 cj c10 cq ck" false 18
 
     [<Fact>]
-    let ``ca h2 d2 s10 h3 ca`` () = Test "ca h2 d2 s10 h3" false 14
+    let ``ca h2 d2 s10 h3`` () = Test "ca h2 d2 s10 h3" false 14
 
     [<Fact>]
-    let ``d3 s7 h8 dk s3 d3`` () = Test "d3 s7 h8 dk s3" false 4
+    let ``d3 s7 h8 dk s3`` () = Test "d3 s7 h8 dk s3" false 4
+    
+    [<Fact>]
+    let ``d5 s5 h5 c5 dj`` () = Test "d5 s5 h5 c5 dj" false 29
 
     [<Fact>]
     let ``Turnup flush and nob = 6`` () =
