@@ -28,7 +28,7 @@ module Straights =
             | _ -> false
 
     let rec AreAllAdjacent cards =
-        let sortedCards = cards |> Cards.Sort 
+        let sortedCards = cards |> Cards.SortByFace 
         match sortedCards with
         | _ when sortedCards.Length <= 1 -> true
         | _ when IsAdjacent sortedCards[0] sortedCards[1] -> AreAllAdjacent sortedCards[1..]

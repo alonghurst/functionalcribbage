@@ -83,3 +83,7 @@ module Cards =
     let Sort cards =
         cards
         |> Array.sortBy(fun c -> c.Suit, c.Face)
+
+    let SortByFace cards =
+        cards
+        |> Array.sortBy(fun c -> c.Face)
