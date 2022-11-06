@@ -1,5 +1,7 @@
 ﻿namespace Cribbage
 
+open System
+
 type Suit = Hearts | Clubs | Diamonds | Spades
 
 type Face = Ace | Two | Three | Four | Five | Six | Seven | Eight | Nine | Ten | Jack | Queen | King
@@ -42,3 +44,25 @@ module Cards =
         | (None, _) -> None
         | (_, None) -> None
         | (_, _) -> Some {Suit = suit.Value; Face = face.Value}
+
+    let CardsFromString (s: string) =
+        s.Split([| " "; ","; ";" |], StringSplitOptions.RemoveEmptyEntries) 
+        |> Array.map CardFromString 
+        |> Array.filter (fun c -> c.IsSome)
+        |> Array.map (fun c -> c.Value)
+
+    let FaceValue face = 
+        match face with
+        | Ace -> 1
+        | Two -> 2
+        | Three -> 3
+        | Four -> 4
+        | Five -> 5
+        | Six -> 6
+        | Seven -> 7
+        | Eight -> 8
+        | Nine -> 9
+        | Ten | Jack | Queen | King -> 10
+
+    let TotalFaceValue cards  =
+        cards |> Array.map(fun c -> c.Face) |> Array.map FaceValue |> Seq.sum

@@ -4,7 +4,7 @@ open Xunit
 open Cribbage
 
 module Helpers =
-    let AssertCard (card : Card option) (s : Suit) (f : Face) =
+    let AssertCard card (s : Suit) (f : Face) =
         match card with
         | None -> Assert.True(false, $"Card is {None}")
         | _ when card.Value.Suit = s -> Assert.Equal(f, card.Value.Face)

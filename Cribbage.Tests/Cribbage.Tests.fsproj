@@ -8,8 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Helpers.fs" />
-    <Compile Include="Cards.fs" />
+	  <Compile Include="Helpers.fs" />
+	  <Compile Include="Cards\Value.fs" />
+	  <Compile Include="Cards\Parse.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
