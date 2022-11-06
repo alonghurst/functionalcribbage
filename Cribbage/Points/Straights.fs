@@ -27,22 +27,32 @@ module Straights =
             | Queen when b = King -> true
             | _ -> false
 
-    let rec AreAllAdjacent cards =
+    let rec IsStraight cards =
         let sortedCards = cards |> Cards.SortByFace 
         match sortedCards with
         | _ when sortedCards.Length <= 1 -> true
-        | _ when IsAdjacent sortedCards[0] sortedCards[1] -> AreAllAdjacent sortedCards[1..]
+        | _ when IsAdjacent sortedCards[0] sortedCards[1] -> IsStraight sortedCards[1..]
         | _ -> false
 
-    let IsStraight cards = false
+    let IsSubsetOfAny (cards : Set<Card>) (straights : Set<Card>[])= 
+        let supersets = 
+            straights
+            |> Array.filter(fun s -> Set.isProperSuperset s cards)
+        match supersets.Length with
+        | 0 -> false
+        | _ -> true
 
     let Get cards =
-        GenerateCombinations cards
-        |> Array.filter IsStraight
+        let straights = 
+            GenerateCombinations cards
+            |> Array.filter IsStraight
+            |> Array.map Set.ofSeq
+        straights
+        |> Array.filter(fun s -> not (IsSubsetOfAny s straights))
 
     let CountPoints cards = 
         let straights = Get cards 
         straights
-        |> Array.map(fun a -> a.Length)
+        |> Array.map(fun a -> a.Count)
         |> Array.sum
 
