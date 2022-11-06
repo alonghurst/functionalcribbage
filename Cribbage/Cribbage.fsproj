@@ -14,6 +14,7 @@
     <Compile Include="Points\Pairs.fs" />
     <Compile Include="Points\Flush.fs" />
     <Compile Include="Points\Calculate.fs" />
+    <Compile Include="Program.fs" />
   </ItemGroup>
 
 </Project>

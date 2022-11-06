@@ -87,3 +87,10 @@ module Cards =
     let SortByFace cards =
         cards
         |> Array.sortBy(fun c -> c.Face)
+
+    let CardToString card = $"{card.Face} of {card.Suit}"
+
+    let CardsToString (cards : Card[]) = 
+        cards 
+        |> Array.map CardToString
+        |> String.concat ", "
