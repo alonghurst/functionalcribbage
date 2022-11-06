@@ -79,3 +79,7 @@ module Cards =
         AllSuits
         |> Array.map SuitOfFaces
         |> Array.reduce Array.append
+
+    let Sort cards =
+        cards
+        |> Array.sortBy(fun c -> c.Suit, c.Face)

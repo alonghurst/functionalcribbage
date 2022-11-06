@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <Compile Include="Cards.fs" />
+    <Compile Include="Combinations.fs" />
     <Compile Include="Points.fs" />
   </ItemGroup>
 
