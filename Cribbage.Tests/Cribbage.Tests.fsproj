@@ -9,6 +9,7 @@
 
   <ItemGroup>
 	  <Compile Include="Helpers.fs" />
+	  <Compile Include="Points\Nobs.fs" />
 	  <Compile Include="Points\Calculate.fs" />
 	  <Compile Include="Cards\Deck.fs" />
 	  <Compile Include="Cards\Value.fs" />

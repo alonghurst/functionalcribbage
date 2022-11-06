@@ -5,7 +5,7 @@ open Cards
 
 module Points =
 
-    let Nobs cards turnup = 1
+    let Nobs cards turnup = 0
     let Nob card turnup = 0
     let Fifteens cards turnup = 2
     let Fifteen cards = 0
