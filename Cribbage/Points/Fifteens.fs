@@ -16,7 +16,6 @@ module Fifteens =
     let Get cards =
         GenerateCombinations cards
         |> Array.filter IsFifteen
-        |> Array.distinct
 
     let CountPoints cards = 
         let fifteens = Get cards 
