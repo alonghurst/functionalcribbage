@@ -9,7 +9,9 @@
 
   <ItemGroup>
 	  <Compile Include="Helpers.fs" />
-	  <Compile Include="Points\Flushes.fs" />
+	  <Compile Include="Points\Pairs.fs" />
+	  <Compile Include="Points\Fifteens.fs" />
+	  <Compile Include="Points\Flush.fs" />
 	  <Compile Include="Points\Nobs.fs" />
 	  <Compile Include="Points\Calculate.fs" />
 	  <Compile Include="Cards\Combinations.fs" />

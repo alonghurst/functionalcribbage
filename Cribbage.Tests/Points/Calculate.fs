@@ -1,7 +1,6 @@
 ﻿namespace Tests
 
 open Xunit
-open Helpers
 open Cribbage
 
 module Calculate =

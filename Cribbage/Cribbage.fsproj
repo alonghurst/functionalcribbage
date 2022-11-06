@@ -8,7 +8,12 @@
   <ItemGroup>
     <Compile Include="Cards.fs" />
     <Compile Include="Combinations.fs" />
-    <Compile Include="Points.fs" />
+    <Compile Include="Points\Straights.fs" />
+    <Compile Include="Points\Nob.fs" />
+    <Compile Include="Points\Fifteens.fs" />
+    <Compile Include="Points\Pairs.fs" />
+    <Compile Include="Points\Flush.fs" />
+    <Compile Include="Points\Calculate.fs" />
   </ItemGroup>
 
 </Project>
