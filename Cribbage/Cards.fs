@@ -66,3 +66,16 @@ module Cards =
 
     let TotalFaceValue cards  =
         cards |> Array.map(fun c -> c.Face) |> Array.map FaceValue |> Seq.sum
+
+    let AllSuits = [| Hearts; Clubs; Diamonds; Spades |]
+
+    let AllFaces= [| Ace; Two; Three; Four; Five; Six; Seven; Eight; Nine; Ten; Jack; Queen; King |]
+
+    let SuitOfFaces suit =
+        AllFaces
+        |> Array.map(fun f -> {Face = f; Suit = suit})
+
+    let DeckOfCards =
+        AllSuits
+        |> Array.map SuitOfFaces
+        |> Array.reduce Array.append
